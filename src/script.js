@@ -51,14 +51,18 @@ const loadPage = (() => {
         let content = document.getElementById('content');
         content.innerHTML = '';
 
-        let location = document.createElement('div');
-        compose(location, constants.LOCATION_TITLE, '', constants.LOCATION_TEXT, content);
+        let rosePoultry = document.createElement('div');
+        compose(rosePoultry, constants.rosePoultry_TITLE, '', constants.rosePoultry_TEXT, content);
 
-        let history = document.createElement('div');
-        compose(history, constants.HISTORY_TITLE, '', constants.HISTORY_TEXT, content);
+        let sushiBurger = document.createElement('div');
+        compose(sushiBurger, constants.rosePoultry_TITLE, '', constants.rosePoultry_TEXT, content);
 
-        let workwithus = document.createElement('div');
-        compose(workwithus, constants.WORKWITHUS_TITLE, '', constants.WORWWITHUS_TEXT, content);
+        let walkingShrimp = document.createElement('div');
+        compose(walkingShrimp, constants.walkingShrimp_TITLE, '', constants.walkingShrimp_TEXT, content);
+
+        let arepizza = document.createElement('div');
+        compose(arepizza, constants.walkingShrimp_TITLE, '', constants.arepizza_TEXT, content);
+        
     }
 
     let compose = function(parent, title, imgSrc, text, content){
@@ -73,4 +77,17 @@ const loadPage = (() => {
         parent.appendChild(textComp);
         content.appendChild(parent);
     }
+
+    let start = function(){
+        let home = document.getElementById('home');
+        let aboutUs = document.getElementById('about_us');
+        let menu = document.getElementById('menu');
+
+        home.addEventListener('click', home());
+        aboutUs.addEventListener('click', aboutUs());
+        menu.addEventListener('click', menu());
+
+    }
 })();
+
+loadPage.start();
