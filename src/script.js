@@ -29,21 +29,48 @@ const loadPage = (() => {
         compose(enjoy, constants.ENJOY_TITLE, '', constants.ENJOY_TEXT, content);
 
 
-        let compose = function(parent, title, imgSrc, text, content){
-            let titleComp = document.createElement('h3');
-            titleComp.innerText = title;
-            let imageComp = document.createElement('img');
-            imageComp.src = imgSrc;
-            let textComp = document.createElement('p');
-            textComp.innerText = text;
-            parent.appendChild(titleComp);
-            parent.appendChild(imageComp);
-            parent.appendChild(textComp);
-            content.appendChild(parent);
-        }
+        
     }
 
     const aboutUs = function() { 
-        
+        let content = document.getElementById('content');
+        content.innerHTML = '';
+
+        let location = document.createElement('div');
+        compose(location, constants.LOCATION_TITLE, '', constants.LOCATION_TEXT, content);
+
+        let history = document.createElement('div');
+        compose(history, constants.HISTORY_TITLE, '', constants.HISTORY_TEXT, content);
+
+        let workwithus = document.createElement('div');
+        compose(workwithus, constants.WORKWITHUS_TITLE, '', constants.WORWWITHUS_TEXT, content);
+
+    }
+
+    const menu = function() {
+        let content = document.getElementById('content');
+        content.innerHTML = '';
+
+        let location = document.createElement('div');
+        compose(location, constants.LOCATION_TITLE, '', constants.LOCATION_TEXT, content);
+
+        let history = document.createElement('div');
+        compose(history, constants.HISTORY_TITLE, '', constants.HISTORY_TEXT, content);
+
+        let workwithus = document.createElement('div');
+        compose(workwithus, constants.WORKWITHUS_TITLE, '', constants.WORWWITHUS_TEXT, content);
+    }
+
+    let compose = function(parent, title, imgSrc, text, content){
+        let titleComp = document.createElement('h3');
+        titleComp.innerText = title;
+        let imageComp = document.createElement('img');
+        imageComp.src = imgSrc;
+        let textComp = document.createElement('p');
+        textComp.innerText = text;
+        parent.appendChild(titleComp);
+        parent.appendChild(imageComp);
+        parent.appendChild(textComp);
+        content.appendChild(parent);
     }
 })();
